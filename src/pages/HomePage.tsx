@@ -4,6 +4,7 @@ import { HomeSkeleton } from '../components/PageSkeletons';
 import { usePageReady } from '../components/Skeleton';
 import { ThemeSwitch } from '../components/ThemeSwitch';
 import { useTheme } from '../context/ThemeContext';
+import { Logo } from '../components/Logo';
 import { clearAuthToken, getAuthToken } from '../helpers/authStorage';
 
 interface MockPart { text: string; color: string; }
@@ -78,7 +79,7 @@ export default function HomePage() {
         zIndex: 50,
         '--hp-ink': theme.text,
       } as React.CSSProperties}>
-        <span style={{ color: theme.text, fontWeight: 800, fontSize: 20 }}>WIMPS</span>
+        <span style={{ color: theme.text, fontWeight: 800, fontSize: 20 }}><Logo size={24} /></span>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
           <Link to="/docs" className="home-nav-link" style={{ color: theme.subText, textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>Docs</Link>
           {isLoggedIn ? (
@@ -454,7 +455,7 @@ export default function HomePage() {
         flexWrap: 'wrap',
         gap: 12,
       }}>
-        <span style={{ color: theme.subText, fontSize: 13 }}>WIMPS · Web Interactive MIPS Pocket Simulator</span>
+        <span style={{ color: theme.subText, fontSize: 13 }}>WIMPS · Web Interactive MIPS Playground & Simulator</span>
         <div style={{ display: 'flex', gap: 20 }}>
           <Link to="/docs" className="home-link-muted" style={{ color: theme.subText, textDecoration: 'none', fontSize: 13 }}>Docs</Link>
           {isLoggedIn ? (
